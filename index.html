@@ -683,8 +683,8 @@
         déploiement de solutions sécurité.
       </p>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#2b4a474e534a454f594e054f444a456b43445f464a424705484446" class="contact-link">
-          <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span><span class="__cf_email__" data-cfemail="aacbc6cfd2cbc4ced8cf84cec5cbc4eac2c5dec7cbc3c684c9c5c7">[email&#160;protected]</span></span>
+        <a id="mailLink" class="contact-link">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span id="mailDisplay">...</span>
         </a>
         <a href="#" class="contact-link">
           <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span>LinkedIn — à renseigner</span>
@@ -861,6 +861,17 @@
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.about-stats').forEach(function(c) { cObs.observe(c); });
+
+  // ── Email anti-Cloudflare ─────────────────────────────
+  var u = 'alexandre.doan';
+  var d = 'hotmail.com';
+  var mail = u + '@' + d;
+  var ml = document.getElementById('mailLink');
+  var md = document.getElementById('mailDisplay');
+  if (ml && md) {
+    ml.href = 'mailto:' + mail;
+    md.textContent = mail;
+  }
 
   // ── Formspree contact form ────────────────────────────
   var form      = document.getElementById('contactForm');
